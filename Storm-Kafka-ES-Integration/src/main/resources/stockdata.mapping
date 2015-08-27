@@ -1,0 +1,41 @@
+curl -XPOST 'http://localhost:9200/stockdata/_mapping/docs' -d '
+{  
+      "docs":{  
+         "properties":{  
+            "Date":{  
+               "type":"date",
+               "format":"date"
+            },
+            "High":{  
+               "type":"float"
+            },
+            "Low":{  
+               "type":"float"
+            },
+            "Open":{  
+               "type":"float"
+            },
+            "Close":{
+            	"type":"float"
+            },
+            "Volume":{
+            	"type":"long"
+            },
+            "Adj Close":{
+            	"type":"float"
+            },
+            "Source":{  
+               "type":"string",
+               "index":"not_analyzed"
+            },
+            "id":{  
+               "type":"string",
+               "index":"not_analyzed"
+            },
+            "stream":{  
+               "type":"string",
+               "index":"not_analyzed"
+            }
+         }
+      }
+}'
